@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -34,17 +35,18 @@ public class TestBase {
 
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
-					//System.getProperty("user.dir") + "//Driver_linux//chromedriver");
-					System.getProperty("user.dir") + "//Drivers//chromedriver.exe");	
-			
+					// System.getProperty("user.dir") + "//Driver_linux//chromedriver");
+					System.getProperty("user.dir") + "//Drivers//chromedriver.exe");
+
 			ChromeOptions opt = new ChromeOptions();
-			
-			//opt.setBinary("///usr///bin//google-chrome");
-			//opt.addArguments("--headless");
-			//opt.addArguments("--no-sandbox");
-			//opt.addArguments("--disable-dev-shm-usage");
-			//driver = new ChromeDriver(opt);
+
+			// opt.setBinary("///usr///bin//google-chrome");
+			// opt.addArguments("--headless");
+			// opt.addArguments("--no-sandbox");
+			// opt.addArguments("--disable-dev-shm-usage");
+			// driver = new ChromeDriver(opt);
 			driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			
 		} else if (browserName.equals("FF")) {
 			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "//Drivers//geckodriver");

@@ -24,14 +24,14 @@ public class LoginTest extends TestBase {
 		loginPage = new LoginPage();
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 1)
 	public void loginPageTitleTest() {
 		String title = loginPage.validateLoginPageTitle();
 		Assert.assertEquals(title,
 				"Free CRM software for customer relationship management, sales, marketing campaigns and support.");
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 2)
 	public void crmLogoImageTest() {
 		boolean flag = loginPage.validateCRMImage();
 		Assert.assertTrue(flag);
