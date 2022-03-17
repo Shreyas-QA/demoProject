@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Docker Maven Test">
+
+	<test name="Docker Maven Test: " parallel="classes" verbose="1"
+		thread-count="1">
+
+		<classes>
+
+			<class name="demoProject.LoginTest" />
+		</classes>
+	</test>
+</suite> <!-- Suite -->
+
+<!-- mvn clean test -U -Pselenium-tests -->

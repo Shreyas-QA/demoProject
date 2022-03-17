@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="demoProject.LoginTest" duration-ms="28813" started-at="2022-03-16T16:51:30 IST" finished-at="2022-03-16T16:51:58 IST">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="28813" started-at="2022-03-16T16:51:30 IST" finished-at="2022-03-16T16:51:58 IST">
+      <class name="demoProject.LoginTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:demoProject.LoginTest@553f17c]" name="setUp" is-config="true" duration-ms="15173" started-at="2022-03-16T16:51:30 IST" finished-at="2022-03-16T16:51:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginPageTitleTest()[pri:1, instance:demoProject.LoginTest@553f17c]" name="loginPageTitleTest" duration-ms="35" started-at="2022-03-16T16:51:45 IST" finished-at="2022-03-16T16:51:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPageTitleTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:demoProject.LoginTest@553f17c]" name="tearDown" is-config="true" duration-ms="794" started-at="2022-03-16T16:51:45 IST" finished-at="2022-03-16T16:51:46 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:demoProject.LoginTest@553f17c]" name="setUp" is-config="true" duration-ms="12011" started-at="2022-03-16T16:51:46 IST" finished-at="2022-03-16T16:51:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="crmLogoImageTest()[pri:2, instance:demoProject.LoginTest@553f17c]" name="crmLogoImageTest" duration-ms="87" started-at="2022-03-16T16:51:58 IST" finished-at="2022-03-16T16:51:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- crmLogoImageTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:demoProject.LoginTest@553f17c]" name="tearDown" is-config="true" duration-ms="694" started-at="2022-03-16T16:51:58 IST" finished-at="2022-03-16T16:51:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- demoProject.LoginTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- demoProject.LoginTest -->
+</testng-results>
