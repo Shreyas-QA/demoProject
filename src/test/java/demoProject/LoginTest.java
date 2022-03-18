@@ -18,7 +18,7 @@ public class LoginTest extends TestBase {
 		super();
 	}
 
-	@BeforeTest
+	@BeforeMethod
 	public void setUp() {
 		initialization();
 		loginPage = new LoginPage();
