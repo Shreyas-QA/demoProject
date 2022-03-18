@@ -11,6 +11,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 
 public class TestBase {
 
@@ -30,29 +35,44 @@ public class TestBase {
 		}
 	}
 
+	@BeforeTest
 	public static void initialization() {
 		String browserName = prop.getProperty("browser");
+		String osName = prop.getProperty("os");
+		if (osName.equals("windows")) {
+			if (browserName.equals("chrome")) {
+				System.setProperty("webdriver.chrome.driver",
+						System.getProperty("user.dir") + "//Drivers//chromedriver.exe");
 
-		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver",
-					// System.getProperty("user.dir") + "//Driver_linux//chromedriver");
-					System.getProperty("user.dir") + "//Drivers//chromedriver.exe");
+				driver = new ChromeDriver();
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-			ChromeOptions opt = new ChromeOptions();
+			} else if (browserName.equals("FF")) {
+				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "//Drivers//geckodriver");
+				driver = new FirefoxDriver();
+			}
+		} else if (osName.equals("linux")) {
 
-			// opt.setBinary("///usr///bin//google-chrome");
-			// opt.addArguments("--headless");
-			// opt.addArguments("--no-sandbox");
-			// opt.addArguments("--disable-dev-shm-usage");
-			// driver = new ChromeDriver(opt);
-			driver = new ChromeDriver();
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
-		} else if (browserName.equals("FF")) {
-			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "//Drivers//geckodriver");
-			driver = new FirefoxDriver();
+			if (browserName.equals("chrome")) {
+				System.setProperty("webdriver.chrome.driver",
+						System.getProperty("user.dir") + "//Driver_linux//chromedriver");
+
+				ChromeOptions opt = new ChromeOptions();
+
+				opt.setBinary("//usr//bin//google-chrome");
+				opt.addArguments("--headless");
+				opt.addArguments("--no-sandbox");
+				opt.addArguments("--disable-dev-shm-usage");
+				driver = new ChromeDriver(opt);
+				driver = new ChromeDriver();
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+			} else if (browserName.equals("FF")) {
+				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "//Drivers//geckodriver");
+				driver = new FirefoxDriver();
+			}
+
 		}
-
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 

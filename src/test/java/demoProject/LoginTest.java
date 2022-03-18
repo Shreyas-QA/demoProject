@@ -20,12 +20,13 @@ public class LoginTest extends TestBase {
 
 	@BeforeMethod
 	public void setUp() {
-		initialization();
+		// initialization();
 		loginPage = new LoginPage();
 	}
 
 	@Test(priority = 1)
 	public void loginPageTitleTest() {
+		System.out.println(loginPage);
 		String title = loginPage.validateLoginPageTitle();
 		Assert.assertEquals(title,
 				"Free CRM software for customer relationship management, sales, marketing campaigns and support.");
