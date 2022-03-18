@@ -38,8 +38,4 @@ public class LoginTest extends TestBase {
 		Assert.assertTrue(flag);
 	}
 
-	@AfterMethod
-	public void tearDown() {
-		driver.quit();
-	}
 }
